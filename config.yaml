@@ -1,0 +1,15 @@
+# Five Fires — distribution rules.
+# Every tunable lives here. The distributor reads it and nothing else.
+
+fires: 5              # how many parties hold recognition
+seats: 435            # size of the chamber
+
+allocation:
+  divisor: sainte_lague     # sainte_lague | dhondt
+
+rules:
+  lineage: true             # parties sharing a lineage occupy ONE fire
+
+structural:                 # veto override, court confirmation, rule changes
+  fires: 0.6                # fraction of recognized fires required (3 of 5)
+  seat_majority: true       # dual key: also needs >50% of the chamber
