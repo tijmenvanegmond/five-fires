@@ -21,6 +21,10 @@ A political architecture proposal that replaces America's two-party system with 
 5. **The Firekeeper.** Nonpartisan procedural chair elected by all of Congress.
 6. **Binding referendums.** Citizen-petitioned, majority wins, Congress can't override.
 
+## Mechanics
+
+**Splitting incentive:** With `lineage: false`, each party occupies its own fire. Under Sainte-Lague proportional allocation, a party that splits into two roughly equal parts gains more total seats than it had as one. Example: a 40% party (160 seats) that splits into two 20% parties receives ~188 seats combined. This natural incentive encourages large parties to voluntarily split, maintaining the five-party balance without explicit bonus seats.
+
 ## Historical precedent
 
 Penta-governance has appeared independently across civilizations:
