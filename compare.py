@@ -77,10 +77,12 @@ def run(label, dist, votes):
 if __name__ == "__main__":
     base = Distributor.from_yaml("config.yaml")
 
-    # Strip the bonus and give both chambers 435 proportional seats, so the
-    # ONLY difference between the runs is how many parties are recognized.
-    two = replace(base, fires=2)
-    five = replace(base, fires=5)
+    # Both chambers run uncapped, so the ONLY difference between the runs is
+    # how many parties are recognized. (A 30% cap is meaningless in a
+    # two-fire chamber -- it would leave 40% of the seats cold. The cap is a
+    # separate mechanism; its effect is pinned in test_distributor.py.)
+    two = replace(base, fires=2, cap=None)
+    five = replace(base, fires=5, cap=None)
 
     print("electorate:")
     for p, v in ELECTORATE.items():

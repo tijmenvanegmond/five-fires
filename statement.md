@@ -22,9 +22,13 @@ The entire system fits in seven rules. Everything else emerges from them.
 
 **Three. President by ranked-choice national popular vote.** Five candidates. Voters rank them. Elimination rounds proceed until one candidate holds a true majority. No Electoral College. No winning the presidency with 46% of the vote in the right states. The president represents broad national consensus — not the lesser evil of a false binary.
 
-**Four. The Firekeeper.** All of Congress elects one person through ranked-choice voting to serve as Firekeeper. That person renounces party membership for the duration of their term. They chair procedure, mediate disputes between parties, and oversee elections. They cannot introduce legislation. Their power lies in what they maintain, not what they create. This role is modeled on the Onondaga — the firekeepers of the Haudenosaunee Confederacy — who were chosen not because they were the weakest or the strongest, but because they were trusted to hold the center.
+**Four. The Council of Five, and the Firekeeper who chairs it.** Each fire holds one seat on a council of five — one voice each, whatever its size, so a party with 8% of the chamber speaks there as loudly as one with 30%. Councillors are chosen by their own fire's members, serve fixed terms, and cannot be recalled by their party. That last clause is the mechanism, not a detail: a councillor who can be recalled is staff, one who cannot is a rival. It is what makes a party's division real rather than cosmetic — inside a large party a faction leader is a subordinate, but holding a fire makes them a constitutional officer, and two fires cannot recombine without one of them losing a chair. You cannot legislate sincerity; you can create chairs.
 
-**Five. No party over 40%.** A hard constitutional cap. If any party wins more than 40% of the proportional vote, excess seats are redistributed to the remaining four parties proportionally. This single rule prevents dominance permanently. No party can ever approach a governing majority alone. Coalition and negotiation are not optional — they are structural.
+All of Congress elects one person through ranked-choice voting to chair that council as Firekeeper. That person renounces party membership for the duration of their term. They chair procedure, mediate disputes between parties, and oversee elections. They cannot introduce legislation. Their power lies in what they maintain, not what they create. Five nations around a fire, and one keeper of it: this is modeled directly on the Onondaga — the firekeepers of the Haudenosaunee Confederacy — who were chosen not because they were the weakest or the strongest, but because they were trusted to hold the center.
+
+**Five. No fire over 30%, and the excess stays cold.** A hard constitutional cap. No fire may hold more than 30% of the chamber, and seats above that line are left vacant — not redistributed to the other four. A party winning 40% of the vote takes 120 seats of 400 and forfeits 73; the same voters, split across two parties of 20%, return 210 seats and forfeit none. Refusing to divide is not fined. It simply leaves seats cold on the floor, in plain view, election after election.
+
+Leaving them cold rather than handing them to rivals is the part that matters. Redistribute the excess and the runner-up finishes ahead of the party that won the most votes — 20% seated above 40%. No electorate would accept that. Cold seats put the whole cost on the party that refuses to divide and elevate nobody artificially: the largest fire stays the largest fire, it simply cannot govern alone. This one rule prevents dominance permanently, and it is the only thing in the system that makes a large party want to become two.
 
 **Six. Recall by citizens.** Every congressional district maintains a standing Recall Council of randomly selected citizens, serving one-year terms like jury duty. They hold one power: initiating a recall vote against their representative by two-thirds council majority. The recall then goes to a district-wide vote. This is cheaper, faster, and more democratic than current recall mechanisms. It keeps representatives accountable between elections without the chaos of constant ballot initiatives.
 
@@ -42,9 +46,17 @@ The five parties do not need to be equal in size. Proportional representation me
 
 ## What Happens to Parties That Fall Off
 
-They lose all formal recognition: seats, committee assignments, debate access, public funding, cabinet representation. Voters who cast ballots for a party outside the top five see their votes redistributed proportionally among the recognized five. The party itself can continue to exist, organize, fundraise, and run candidates. But it holds zero institutional power until it claws back a top-five position.
+They lose all formal recognition: seats, committee assignments, debate access, public funding, cabinet representation. The party itself can continue to exist, organize, fundraise, and run candidates. But it holds zero institutional power until it claws back a top-five position.
+
+Say the hard part plainly: votes cast for a party outside the top five elect nobody. They are not transferred to a second preference and they do not follow their voters anywhere. They fall out of the count, and the recognized five divide the chamber between them — so a wasted vote slightly enlarges every party its voter did not choose.
 
 This is supposed to be harsh. The threat of falling off is what keeps parties responsive to voters. A comfortable fifth-place party that knows its seat is permanent will grow complacent. A fifth-place party that knows a sixth is breathing down its neck will fight to earn every vote.
+
+The cliff also does quiet work at the other end. It is what stops fragmentation without any rule against fragmenting: a party of 8% that divides itself in half wins nothing at all, because both halves fall off. So the cap pushes the big to divide and the cliff pushes the small to combine, and between them a fire settles at roughly a fifth to a third of the chamber without anyone being instructed to aim there.
+
+And the remedy offered to those below the line is not a consolation transfer — it is organisation. Two parties of 8% and 7% who both expect to fall short can run on one ballot line and hold a fire comfortably. Four scattered tail parties totalling 24% can combine and take the largest fire in the room. The cliff does not tell small movements they are unwelcome. It tells them they are unorganised, and hands them the mechanism.
+
+There is a second chance available after the count, switched on at present, and it is honest to name its cost. Parties left out may combine once the votes are in — either merging to claim a fire, or joining a fire someone else already tends. Merging is never free: there are only five fires, so a rescue that wins one always unseats a party that won one on the night. Joining costs nobody a fire but buys no seat in council. So the choice put to those below the line is a voice of their own at a seated party's expense, or seats inside another party's fire at no one's. Either way the argument against it is the same and does not go away: before the ballot voters can see a merger coming, and afterwards they cannot.
 
 ---
 
@@ -60,7 +72,9 @@ The structural incentives of American politics reverse.
 
 Ranked-choice voting rewards candidates who are acceptable to voters beyond their base. You cannot win the presidency by making 60% of the country despise you. You need to be someone's first choice and many people's second choice. The math enforces moderation without requiring it by law.
 
-Proportional representation means no vote is wasted. A conservative in Massachusetts and a progressive in Oklahoma both send representatives to Congress. The geographic sorting that currently renders millions of voters invisible disappears.
+Proportional representation ends geographic waste. A conservative in Massachusetts and a progressive in Oklahoma both send representatives to Congress; the sorting that currently renders millions of voters invisible disappears, because a party with 20% support in a state gets 20% of that state's seats no matter where its voters live.
+
+It does not end waste altogether, and the claim that it does should be resisted — five recognized parties means votes below the line still elect nobody. What the system offers instead is that the waste is *addressable*: it falls on the unorganised rather than the geographically unlucky, and organising is a move any party can make. A voter stranded in the wrong state can do nothing about it. A party stranded below the cliff can merge.
 
 Coalition government means every major bill requires negotiation across party lines. Obstruction becomes structurally pointless — if you refuse to participate, the other four parties build a coalition without you and you get nothing. The incentive flips from blocking to building.
 

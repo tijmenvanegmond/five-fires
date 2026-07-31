@@ -1,12 +1,33 @@
 # Five Fires — distribution rules.
 # Every tunable lives here. The distributor reads it and nothing else.
+#
+# No rule in this file reads party identity or history. Every one of them
+# reads vote counts. There is nothing for a registrar to adjudicate.
 
-fires: 5              # how many parties hold recognition
+fires: 5              # how many fires hold recognition
 seats: 400            # size of the chamber
 
 allocation:
   divisor: sainte_lague     # sainte_lague | dhondt
+  cap: 0.30                 # max share of the chamber one fire may hold.
+                            # Excess seats are left COLD — vacant, not
+                            # redistributed. A fire that outgrows the cap
+                            # forfeits them until it divides.
+
+rules:
+  rescue: true              # post-count rescue: parties ejected on the count
+                            # may merge to claim a fire, or join one already
+                            # tended. Recovers wasted vote, but settles the
+                            # chamber after the ballot rather than at it —
+                            # voters can see a merger coming beforehand and
+                            # cannot afterwards. See distribute(rescue=).
+  rescue_floor: 0.02        # share of the vote a party needs before it may
+                            # join a rescue. Separates a rescue from a vacuum
+                            # cleaner: without a floor, any pile of dust can
+                            # assemble a fire. Everything below stays wasted.
 
 structural:                 # veto override, court confirmation, rule changes
-  fires: 0.6                # fraction of recognized fires required (3 of 5)
-  seat_majority: true       # dual key: also needs **>50% of the chamber
+  fires: 0.6                # fraction of fires required — 3 of 5, in council
+  seat_supermajority: 0.667 # dual key: also two-thirds of the chamber.
+                            # A bare majority is not enough: one bloc holding
+                            # 3 fires by dividing itself would clear it.
