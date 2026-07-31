@@ -14,8 +14,8 @@ A political architecture proposal that replaces America's two-party system with 
 
 ## The Six Rules
 
-1. **Five parties, always five.** Top five by vote share hold recognition. Sixth swaps in, lowest drops out.
-2. **Proportional House + bonus seats.** 400 proportional seats + 35 bonus seats favoring smaller parties.
+1. **Five parties, always five.** Top five by vote share hold recognition. Sixth swaps in, lowest drops out. Large ones encouraged to splitup.
+2. **Proportional House** 400 proportional seats.
 3. **Ranked-choice Senate.** Broad appeal required, not just base turnout.
 4. **President with a sliding veto.** Two-round popular vote. Veto power weakens as Congressional majority grows.
 5. **The Firekeeper.** Nonpartisan procedural chair elected by all of Congress.
