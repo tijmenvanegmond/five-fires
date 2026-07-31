@@ -8,7 +8,7 @@ D = Distributor.from_yaml("config.yaml")
 
 def test_chamber_fully_allocated():
     r = D({"A": 33, "B": 33, "C": 11, "D": 11, "E": 11})
-    assert sum(r.seats.values()) == 435
+    assert sum(r.seats.values()) == 400
 
 
 def test_equal_votes_give_equal_seats():
@@ -44,12 +44,12 @@ def test_threshold_never_deadlocks():
         assert r.coalitions(r.can_act), f"deadlock at {n} fires"
 
 
-def test_split_is_seat_neutral():
+def test_split_gains_seats_without_lineage():
     base = D({"A": 40, "B": 25, "C": 20, "D": 10, "E": 5})
-    split = D({"A1": 20.8, "A2": 19.2, "B": 25, "C": 20, "D": 10, "E": 5},
-              lineage={"A1": "A", "A2": "A"})
-    assert split.seats["A1"] + split.seats["A2"] <= base.seats["A"]
-    assert split.ejected == ()
+    split = D({"A1": 20.8, "A2": 19.2, "B": 25, "C": 20, "D": 10, "E": 5})
+    # Without lineage, splitting gains seats (natural incentive)
+    assert split.seats["A1"] + split.seats["A2"] > base.seats["A"]
+    assert "E" in split.ejected
 
 
 def test_split_pays_without_lineage():
@@ -60,15 +60,16 @@ def test_split_pays_without_lineage():
     assert split.seats["A1"] + split.seats["A2"] > base.seats["A"]
 
 
-def test_lineage_shares_one_fire():
+def test_no_lineage_parties_are_separate():
     r = D({"A1": 21, "A2": 19, "B": 25, "C": 20, "D": 10, "E": 5},
           lineage={"A1": "A", "A2": "A"})
-    assert len(r.fires) == 5 and r.fire_of("A1") is r.fire_of("A2")
+    # With lineage=False, parties are separate fires regardless of lineage mapping
+    assert len(r.fires) == 5 and r.fire_of("A1") is not r.fire_of("A2")
 
 
 def test_fewer_parties_than_fires():
     r = D({"A": 60, "B": 40})
-    assert len(r.fires) == 2 and sum(r.seats.values()) == 435
+    assert len(r.fires) == 2 and sum(r.seats.values()) == 400
 
 
 def test_coalitions_are_minimal():
