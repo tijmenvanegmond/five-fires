@@ -9,7 +9,6 @@ allocation:
 
 rules:
   lineage: false            # parties sharing a lineage occupy ONE fire
-  splitAt: 0.5
 
 structural:                 # veto override, court confirmation, rule changes
   fires: 0.6                # fraction of recognized fires required (3 of 5)
