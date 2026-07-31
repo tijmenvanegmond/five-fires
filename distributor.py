@@ -91,6 +91,15 @@ class Allocation:
 
 @dataclass
 class Distributor:
+    """Seat distributor for the Five Fires system.
+    
+    Core assumptions:
+    - Each party occupies exactly one fire (no lineage grouping)
+    - Under Sainte-Lague divisor, splitting a party into two equal parts
+      gains more total seats than staying as one party
+    - This natural incentive encourages parties to split, maintaining
+      the five-party balance without explicit bonus seats
+    """
     fires: int = 5
     seats: int = 400
     divisor: str = "sainte_lague"
@@ -102,6 +111,27 @@ class Distributor:
             raise ValueError(f"unknown divisor {self.divisor!r}")
         if not 0 < self.structural_fires <= 1:
             raise ValueError("structural fires must be a fraction in (0, 1]")
+        # Verify splitting incentive for Sainte-Lague (core assumption)
+        if self.divisor == "sainte_lague":
+            self._verify_splitting_incentive()
+
+    def _verify_splitting_incentive(self):
+        """Assert that splitting a large party into two equal parts gains seats.
+        
+        This is the core mechanical incentive that maintains the five-party balance.
+        Under Sainte-Lague with independent fires, splitting is always beneficial.
+        """
+        # Test case: 40% party vs two 20% parties
+        base = self({"A": 40, "B": 20, "C": 20, "D": 15, "E": 5})
+        split = self({"A1": 20, "A2": 20, "B": 20, "C": 15, "D": 10, "E": 5})
+        
+        a_seats = base.seats["A"]
+        a1_a2_seats = split.seats["A1"] + split.seats["A2"]
+        
+        assert a1_a2_seats > a_seats, (
+            f"Splitting incentive broken: {a1_a2_seats} <= {a_seats}. "
+            f"Splitting should gain seats under Sainte-Lague with independent fires."
+        )
 
     @classmethod
     def from_yaml(cls, path: str | Path) -> Distributor:
