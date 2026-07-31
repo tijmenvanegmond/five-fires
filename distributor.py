@@ -6,7 +6,7 @@ Five Fires — seat distributor.
     d = Distributor.from_yaml("config.yaml")
     r = d({"A": 33, "B": 33, "C": 11, "D": 11, "E": 11})
 
-    r.seats                          # {"A": 144, "B": 143, ...}
+    r.seats                          # {"A": 132, "B": 132, ...}
     r.ejected                        # parties that missed recognition
     r.can_act(["A", "C", "D"])       # meets the structural threshold?
 """
@@ -92,9 +92,8 @@ class Allocation:
 @dataclass
 class Distributor:
     fires: int = 5
-    seats: int = 435
+    seats: int = 400
     divisor: str = "sainte_lague"
-    lineage: bool = True
     structural_fires: float = 0.6
     seat_majority: bool = True
 
@@ -111,14 +110,12 @@ class Distributor:
             fires=cfg["fires"],
             seats=cfg["seats"],
             divisor=cfg["allocation"]["divisor"],
-            lineage=cfg["rules"]["lineage"],
             structural_fires=cfg["structural"]["fires"],
             seat_majority=cfg["structural"]["seat_majority"],
         )
 
-    def distribute(self, votes: dict[str, float],
-                   lineage: dict[str, str] | None = None) -> Allocation:
-        groups = self._group(votes, lineage or {})
+    def distribute(self, votes: dict[str, float]) -> Allocation:
+        groups = self._group(votes)
         winners, losers = groups[: self.fires], groups[self.fires :]
         recognized = [p for g in winners for p in g]
 
@@ -143,12 +140,9 @@ class Distributor:
 
     __call__ = distribute
 
-    def _group(self, votes, lineage) -> list[list[str]]:
-        """Parties into fire-groups, ranked by combined vote."""
-        buckets: dict[str, list[str]] = {}
-        for p in votes:
-            buckets.setdefault(lineage.get(p, p) if self.lineage else p, []).append(p)
-        return sorted(buckets.values(), key=lambda g: -sum(votes[p] for p in g))
+    def _group(self, votes) -> list[list[str]]:
+        """Parties into fire-groups, ranked by vote."""
+        return sorted([[p] for p in votes], key=lambda g: -sum(votes[p] for p in g))
 
     def _apportion(self, pool: dict[str, float]) -> dict[str, int]:
         """Highest-quotient allocation under the configured divisor."""

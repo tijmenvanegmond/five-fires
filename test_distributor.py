@@ -44,26 +44,24 @@ def test_threshold_never_deadlocks():
         assert r.coalitions(r.can_act), f"deadlock at {n} fires"
 
 
-def test_split_gains_seats_without_lineage():
+def test_split_gains_seats():
     base = D({"A": 40, "B": 25, "C": 20, "D": 10, "E": 5})
     split = D({"A1": 20.8, "A2": 19.2, "B": 25, "C": 20, "D": 10, "E": 5})
-    # Without lineage, splitting gains seats (natural incentive)
+    # Splitting gains seats (natural incentive with independent fires)
     assert split.seats["A1"] + split.seats["A2"] > base.seats["A"]
     assert "E" in split.ejected
 
 
-def test_split_pays_without_lineage():
-    naive = replace(D, lineage=False)
-    base = naive({"A": 40, "B": 25, "C": 20, "D": 10, "E": 5})
-    split = naive({"A1": 20.8, "A2": 19.2, "B": 25, "C": 20, "D": 10, "E": 5})
+def test_split_pays():
+    base = D({"A": 40, "B": 25, "C": 20, "D": 10, "E": 5})
+    split = D({"A1": 20.8, "A2": 19.2, "B": 25, "C": 20, "D": 10, "E": 5})
     assert "E" in split.ejected
     assert split.seats["A1"] + split.seats["A2"] > base.seats["A"]
 
 
-def test_no_lineage_parties_are_separate():
-    r = D({"A1": 21, "A2": 19, "B": 25, "C": 20, "D": 10, "E": 5},
-          lineage={"A1": "A", "A2": "A"})
-    # With lineage=False, parties are separate fires regardless of lineage mapping
+def test_parties_are_independent():
+    r = D({"A1": 21, "A2": 19, "B": 25, "C": 20, "D": 10, "E": 5})
+    # Each party occupies its own fire
     assert len(r.fires) == 5 and r.fire_of("A1") is not r.fire_of("A2")
 
 
