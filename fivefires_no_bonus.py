@@ -20,8 +20,13 @@ TOTAL_SEATS = 435
 class Party:
     name: str
     votes: float           # national vote share, 0-100
+    lineage: str = ""      # shared id for parties split from a common parent
     seats: int = 0
     recognized: bool = False
+
+    def __post_init__(self):
+        if not self.lineage:
+            self.lineage = self.name
 
     @property
     def total(self):
@@ -39,18 +44,35 @@ def sainte_lague(shares, seats):
     return alloc
 
 
-def recognize(parties):
+def recognize(parties, lineage_rule=True):
     """
     Determine the five recognized fires.
-    Top 5 parties by vote share hold recognition.
+    
+    With lineage_rule on, parties sharing a lineage occupy ONE fire between
+    them - their combined vote decides whether that fire is recognized.
+    With lineage_rule off, top 5 parties by vote share hold recognition.
     """
-    ranked = sorted(parties, key=lambda p: -p.votes)
-    for i, p in enumerate(ranked):
-        p.recognized = i < FIRES
-    return ranked[:FIRES]
+    if not lineage_rule:
+        ranked = sorted(parties, key=lambda p: -p.votes)
+        for i, p in enumerate(ranked):
+            p.recognized = i < FIRES
+        return ranked[:FIRES]
+
+    # group by lineage, rank groups by combined vote
+    groups = {}
+    for p in parties:
+        groups.setdefault(p.lineage, []).append(p)
+    ranked_groups = sorted(groups.values(), key=lambda g: -sum(p.votes for p in g))
+    recognized = []
+    for i, g in enumerate(ranked_groups):
+        for p in g:
+            p.recognized = i < FIRES
+            if i < FIRES:
+                recognized.append(p)
+    return recognized
 
 
-def allocate(parties):
+def allocate(parties, lineage_rule=True):
     """
     Run a full seat allocation for 5 fires with NO bonus seats.
     Returns the recognized parties.
@@ -59,7 +81,7 @@ def allocate(parties):
         p.seats = 0
         p.recognized = False
 
-    rec = recognize(parties)
+    rec = recognize(parties, lineage_rule)
     if not rec:
         return []
 
@@ -108,14 +130,18 @@ def minority_capture(rec, dual_key):
 
 # --------------------------------------------------------------------- report
 
-def show(dist, label):
-    parties = [Party(chr(65 + i), v) for i, v in enumerate(dist)]
-    rec = allocate(parties)
+def show(dist, label, lineage_rule=True, lineages=None):
+    if lineages is None:
+        parties = [Party(chr(65 + i), v) for i, v in enumerate(dist)]
+    else:
+        parties = [Party(chr(65 + i), v, lineage=lineages.get(chr(65 + i), chr(65 + i))) 
+                   for i, v in enumerate(dist)]
+    rec = allocate(parties, lineage_rule)
     print(f"\n{label}")
-    print(f"  votes: {'  '.join(f'{p.name}:{p.votes:.1f}%' for p in parties)}")
-    print(f"  {'party':<6}{'seats':>6}{'share':>8}")
+    print(f"  votes: {'  '.join(f'{p.name}:{p.votes:.1f}%({p.lineage})' for p in parties)}")
+    print(f"  {'party':<8}{'lineage':<8}{'seats':>6}{'share':>8}")
     for p in sorted(rec, key=lambda x: -x.total):
-        print(f"  {p.name:<6}{p.seats:>6}{100*p.total/TOTAL_SEATS:>7.1f}%")
+        print(f"  {p.name:<8}{p.lineage:<8}{p.seats:>6}{100*p.total/TOTAL_SEATS:>7.1f}%")
     unrec = [p.name for p in parties if not p.recognized]
     if unrec:
         print(f"  ejected: {', '.join(unrec)}")
@@ -173,3 +199,39 @@ if __name__ == "__main__":
     unrec = [p.name for p in parties if not p.recognized]
     print(f"  ejected: {', '.join(unrec)}")
     print(f"  Total seats allocated: {sum(p.seats for p in rec)} (should be {TOTAL_SEATS})")
+
+    # Test case 5: SPLIT EXPLOIT with lineage consolidation
+    print("\n" + "=" * 62)
+    print("CASE 5  SPLIT PARTIES CONSOLIDATED BY LINEAGE")
+    print("=" * 62)
+    # A splits into A1(17%) and A2(17%), B splits into B1(16%) and B2(16%)
+    # C, D, E at 11% each
+    dist = [17, 17, 16, 16, 11, 11, 11]
+    
+    print("\n  WITHOUT lineage rule (parties compete individually):")
+    rec_no_lineage = show(dist, "  17/17/16/16/11/11/11", lineage_rule=False)
+    
+    print("\n  WITH lineage rule (A1+A2 share 'A', B1+B2 share 'B'):")
+    # A1 and A2 share lineage "A", B1 and B2 share lineage "B"
+    # C, D, E each have their own lineage
+    lineages = {'A': 'A', 'B': 'A', 'C': 'B', 'D': 'B', 'E': 'C', 'F': 'D', 'G': 'E'}
+    parties_with_lineage = [Party(chr(65 + i), v, lineage=lineages.get(chr(65 + i), chr(65 + i))) 
+                           for i, v in enumerate(dist)]
+    rec_with_lineage = allocate(parties_with_lineage, lineage_rule=True)
+    
+    # Show the fires (lineage groups) that were recognized
+    groups = {}
+    for p in parties_with_lineage:
+        groups.setdefault(p.lineage, []).append(p)
+    ranked_groups = sorted(groups.values(), key=lambda g: -sum(p.votes for p in g))
+    recognized_fires = ranked_groups[:FIRES]
+    
+    print(f"  Recognized fires (lineage groups): {[(g[0].lineage, sum(p.votes for p in g)) for g in recognized_fires]}")
+    print(f"  {'party':<8}{'lineage':<8}{'votes':>6}{'seats':>6}{'share':>8}")
+    for g in recognized_fires:
+        for p in g:
+            print(f"  {p.name:<8}{p.lineage:<8}{p.votes:>6.1f}%{p.seats:>6}{100*p.total/TOTAL_SEATS:>7.1f}%")
+    unrec = [p.name for p in parties_with_lineage if not p.recognized]
+    if unrec:
+        print(f"  ejected: {', '.join(unrec)}")
+    print(f"  Total seats: {sum(p.seats for p in parties_with_lineage if p.recognized)}")
