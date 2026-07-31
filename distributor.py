@@ -136,6 +136,39 @@ class Allocation:
             key=lambda c: sum(self.seats[p] for p in c),
         )
 
+    def to_dict(self) -> dict:
+        """A JSON-ready view of the whole result."""
+        return {
+            "chamber": self.chamber,
+            "seated": sum(self.seats.values()),
+            "cold": self.cold,
+            "wasted_vote": round(self.wasted, 2),
+            "fires": [
+                {
+                    "name": f.name,
+                    "parties": list(f.parties),
+                    "votes": round(f.votes, 3),
+                    "seats": f.seats,
+                    "cold": f.cold,
+                    "claimed": f.claimed,
+                    "share": round(100 * f.seats / self.chamber, 2),
+                    "at_cap": f.cold > 0,
+                }
+                for f in self.fires
+            ],
+            "council": list(self.council),
+            "ejected": list(self.ejected),
+            "rescued": [list(g) for g in self.rescued],
+            "keys": {
+                "fires_required": self.fires_required,
+                "seat_supermajority": self.seat_supermajority,
+                "seats_for_supermajority": ceil(
+                    self.seat_supermajority * self.chamber
+                ),
+                "seats_for_majority": self.chamber // 2 + 1,
+            },
+        }
+
     def _held(self, parties) -> int:
         return sum(self.seats.get(p, 0) for p in parties)
 
@@ -379,3 +412,34 @@ def merge(votes: dict[str, float], parties, name: str | None = None):
     out = {p: v for p, v in votes.items() if p not in parties}
     out[name or "+".join(sorted(parties))] = sum(votes[p] for p in parties)
     return out
+
+
+def _main(argv):
+    """Read a vote share JSON, write the allocation as JSON.
+
+        python distributor.py votes.json
+        echo '{"A":40,"B":20,"C":8,"D":7,"T1":8,"T2":7}' | python distributor.py
+        python distributor.py votes.json --rescue T2,T3,T4 --rescue C,T1
+    """
+    import argparse
+    import json
+    import sys
+
+    ap = argparse.ArgumentParser(description=_main.__doc__)
+    ap.add_argument("votes", nargs="?", help="JSON file of party -> vote share; omit for stdin")
+    ap.add_argument("--config", default="config.yaml")
+    ap.add_argument("--rescue", action="append", default=[],
+                    help="comma-separated group; repeat for several groups")
+    ap.add_argument("--indent", type=int, default=2)
+    args = ap.parse_args(argv)
+
+    raw = Path(args.votes).read_text() if args.votes else sys.stdin.read()
+    votes = json.loads(raw)
+    d = Distributor.from_yaml(args.config)
+    groups = [g.split(",") for g in args.rescue] or None
+    print(json.dumps(d(votes, rescue=groups).to_dict(), indent=args.indent))
+
+
+if __name__ == "__main__":
+    import sys
+    _main(sys.argv[1:])

@@ -1,0 +1,1902 @@
+{
+  "config": {
+    "fires": 5,
+    "seats": 400,
+    "divisor": "sainte_lague",
+    "cap": 0.3,
+    "rescue": true,
+    "rescue_floor": 0.02,
+    "structural_fires": 0.6,
+    "seat_supermajority": 0.667
+  },
+  "electorates": {
+    "lopsided": {
+      "A": 40,
+      "B": 20,
+      "C": 8,
+      "D": 7,
+      "E": 1,
+      "T1": 8,
+      "T2": 7,
+      "T3": 5,
+      "T4": 4
+    },
+    "duopoly": {
+      "A": 45,
+      "B": 38,
+      "C": 5,
+      "D": 4,
+      "E": 3,
+      "F": 2,
+      "G": 2,
+      "H": 1
+    },
+    "healthy": {
+      "A": 24,
+      "B": 22,
+      "C": 20,
+      "D": 18,
+      "E": 12,
+      "F": 3,
+      "G": 1
+    },
+    "fragmented": {
+      "A": 22,
+      "B": 18,
+      "C": 12,
+      "D": 10,
+      "E": 9,
+      "F": 8,
+      "G": 7,
+      "H": 6,
+      "I": 5,
+      "J": 3
+    }
+  },
+  "dividing_ladder": [
+    {
+      "ways": 1,
+      "fires": 1,
+      "seats": 120,
+      "cold": 73,
+      "can_pass": false,
+      "can_act": false,
+      "cushion_over_sixth": 33,
+      "allocation": {
+        "chamber": 400,
+        "seated": 327,
+        "cold": 73,
+        "wasted_vote": 17.0,
+        "fires": [
+          {
+            "name": "A",
+            "parties": [
+              "A"
+            ],
+            "votes": 40,
+            "seats": 120,
+            "cold": 73,
+            "claimed": 193,
+            "share": 30.0,
+            "at_cap": true
+          },
+          {
+            "name": "B",
+            "parties": [
+              "B"
+            ],
+            "votes": 20,
+            "seats": 96,
+            "cold": 0,
+            "claimed": 96,
+            "share": 24.0,
+            "at_cap": false
+          },
+          {
+            "name": "C",
+            "parties": [
+              "C"
+            ],
+            "votes": 8,
+            "seats": 39,
+            "cold": 0,
+            "claimed": 39,
+            "share": 9.75,
+            "at_cap": false
+          },
+          {
+            "name": "T1",
+            "parties": [
+              "T1"
+            ],
+            "votes": 8,
+            "seats": 38,
+            "cold": 0,
+            "claimed": 38,
+            "share": 9.5,
+            "at_cap": false
+          },
+          {
+            "name": "D",
+            "parties": [
+              "D"
+            ],
+            "votes": 7,
+            "seats": 34,
+            "cold": 0,
+            "claimed": 34,
+            "share": 8.5,
+            "at_cap": false
+          }
+        ],
+        "council": [
+          "A",
+          "B",
+          "C",
+          "T1",
+          "D"
+        ],
+        "ejected": [
+          "E",
+          "T2",
+          "T3",
+          "T4"
+        ],
+        "rescued": [],
+        "keys": {
+          "fires_required": 3,
+          "seat_supermajority": 0.667,
+          "seats_for_supermajority": 267,
+          "seats_for_majority": 201
+        }
+      }
+    },
+    {
+      "ways": 2,
+      "fires": 2,
+      "seats": 210,
+      "cold": 0,
+      "can_pass": true,
+      "can_act": false,
+      "cushion_over_sixth": 13.0,
+      "allocation": {
+        "chamber": 400,
+        "seated": 400,
+        "cold": 0,
+        "wasted_vote": 24.0,
+        "fires": [
+          {
+            "name": "B",
+            "parties": [
+              "B"
+            ],
+            "votes": 20,
+            "seats": 106,
+            "cold": 0,
+            "claimed": 106,
+            "share": 26.5,
+            "at_cap": false
+          },
+          {
+            "name": "A1",
+            "parties": [
+              "A1"
+            ],
+            "votes": 20.0,
+            "seats": 105,
+            "cold": 0,
+            "claimed": 105,
+            "share": 26.25,
+            "at_cap": false
+          },
+          {
+            "name": "A2",
+            "parties": [
+              "A2"
+            ],
+            "votes": 20.0,
+            "seats": 105,
+            "cold": 0,
+            "claimed": 105,
+            "share": 26.25,
+            "at_cap": false
+          },
+          {
+            "name": "C",
+            "parties": [
+              "C"
+            ],
+            "votes": 8,
+            "seats": 42,
+            "cold": 0,
+            "claimed": 42,
+            "share": 10.5,
+            "at_cap": false
+          },
+          {
+            "name": "T1",
+            "parties": [
+              "T1"
+            ],
+            "votes": 8,
+            "seats": 42,
+            "cold": 0,
+            "claimed": 42,
+            "share": 10.5,
+            "at_cap": false
+          }
+        ],
+        "council": [
+          "B",
+          "A1",
+          "A2",
+          "C",
+          "T1"
+        ],
+        "ejected": [
+          "D",
+          "E",
+          "T2",
+          "T3",
+          "T4"
+        ],
+        "rescued": [],
+        "keys": {
+          "fires_required": 3,
+          "seat_supermajority": 0.667,
+          "seats_for_supermajority": 267,
+          "seats_for_majority": 201
+        }
+      }
+    },
+    {
+      "ways": 3,
+      "fires": 3,
+      "seats": 235,
+      "cold": 0,
+      "can_pass": true,
+      "can_act": false,
+      "cushion_over_sixth": 5.33,
+      "allocation": {
+        "chamber": 400,
+        "seated": 400,
+        "cold": 0,
+        "wasted_vote": 32.0,
+        "fires": [
+          {
+            "name": "B",
+            "parties": [
+              "B"
+            ],
+            "votes": 20,
+            "seats": 118,
+            "cold": 0,
+            "claimed": 118,
+            "share": 29.5,
+            "at_cap": false
+          },
+          {
+            "name": "A1",
+            "parties": [
+              "A1"
+            ],
+            "votes": 13.333,
+            "seats": 79,
+            "cold": 0,
+            "claimed": 79,
+            "share": 19.75,
+            "at_cap": false
+          },
+          {
+            "name": "A2",
+            "parties": [
+              "A2"
+            ],
+            "votes": 13.333,
+            "seats": 78,
+            "cold": 0,
+            "claimed": 78,
+            "share": 19.5,
+            "at_cap": false
+          },
+          {
+            "name": "A3",
+            "parties": [
+              "A3"
+            ],
+            "votes": 13.333,
+            "seats": 78,
+            "cold": 0,
+            "claimed": 78,
+            "share": 19.5,
+            "at_cap": false
+          },
+          {
+            "name": "C",
+            "parties": [
+              "C"
+            ],
+            "votes": 8,
+            "seats": 47,
+            "cold": 0,
+            "claimed": 47,
+            "share": 11.75,
+            "at_cap": false
+          }
+        ],
+        "council": [
+          "B",
+          "A1",
+          "A2",
+          "A3",
+          "C"
+        ],
+        "ejected": [
+          "D",
+          "E",
+          "T1",
+          "T2",
+          "T3",
+          "T4"
+        ],
+        "rescued": [],
+        "keys": {
+          "fires_required": 3,
+          "seat_supermajority": 0.667,
+          "seats_for_supermajority": 267,
+          "seats_for_majority": 201
+        }
+      }
+    },
+    {
+      "ways": 4,
+      "fires": 4,
+      "seats": 267,
+      "cold": 13,
+      "can_pass": true,
+      "can_act": true,
+      "cushion_over_sixth": 2.0,
+      "allocation": {
+        "chamber": 400,
+        "seated": 387,
+        "cold": 13,
+        "wasted_vote": 40.0,
+        "fires": [
+          {
+            "name": "B",
+            "parties": [
+              "B"
+            ],
+            "votes": 20,
+            "seats": 120,
+            "cold": 13,
+            "claimed": 133,
+            "share": 30.0,
+            "at_cap": true
+          },
+          {
+            "name": "A1",
+            "parties": [
+              "A1"
+            ],
+            "votes": 10.0,
+            "seats": 67,
+            "cold": 0,
+            "claimed": 67,
+            "share": 16.75,
+            "at_cap": false
+          },
+          {
+            "name": "A2",
+            "parties": [
+              "A2"
+            ],
+            "votes": 10.0,
+            "seats": 67,
+            "cold": 0,
+            "claimed": 67,
+            "share": 16.75,
+            "at_cap": false
+          },
+          {
+            "name": "A3",
+            "parties": [
+              "A3"
+            ],
+            "votes": 10.0,
+            "seats": 67,
+            "cold": 0,
+            "claimed": 67,
+            "share": 16.75,
+            "at_cap": false
+          },
+          {
+            "name": "A4",
+            "parties": [
+              "A4"
+            ],
+            "votes": 10.0,
+            "seats": 66,
+            "cold": 0,
+            "claimed": 66,
+            "share": 16.5,
+            "at_cap": false
+          }
+        ],
+        "council": [
+          "B",
+          "A1",
+          "A2",
+          "A3",
+          "A4"
+        ],
+        "ejected": [
+          "C",
+          "D",
+          "E",
+          "T1",
+          "T2",
+          "T3",
+          "T4"
+        ],
+        "rescued": [],
+        "keys": {
+          "fires_required": 3,
+          "seat_supermajority": 0.667,
+          "seats_for_supermajority": 267,
+          "seats_for_majority": 201
+        }
+      }
+    }
+  ],
+  "merging_ladder": [
+    {
+      "parties_merged": 1,
+      "combined_vote": 8,
+      "seats": 38,
+      "holds_a_fire": true,
+      "wasted_vote": 17.0,
+      "allocation": {
+        "chamber": 400,
+        "seated": 327,
+        "cold": 73,
+        "wasted_vote": 17.0,
+        "fires": [
+          {
+            "name": "A",
+            "parties": [
+              "A"
+            ],
+            "votes": 40,
+            "seats": 120,
+            "cold": 73,
+            "claimed": 193,
+            "share": 30.0,
+            "at_cap": true
+          },
+          {
+            "name": "B",
+            "parties": [
+              "B"
+            ],
+            "votes": 20,
+            "seats": 96,
+            "cold": 0,
+            "claimed": 96,
+            "share": 24.0,
+            "at_cap": false
+          },
+          {
+            "name": "C",
+            "parties": [
+              "C"
+            ],
+            "votes": 8,
+            "seats": 39,
+            "cold": 0,
+            "claimed": 39,
+            "share": 9.75,
+            "at_cap": false
+          },
+          {
+            "name": "T1",
+            "parties": [
+              "T1"
+            ],
+            "votes": 8,
+            "seats": 38,
+            "cold": 0,
+            "claimed": 38,
+            "share": 9.5,
+            "at_cap": false
+          },
+          {
+            "name": "D",
+            "parties": [
+              "D"
+            ],
+            "votes": 7,
+            "seats": 34,
+            "cold": 0,
+            "claimed": 34,
+            "share": 8.5,
+            "at_cap": false
+          }
+        ],
+        "council": [
+          "A",
+          "B",
+          "C",
+          "T1",
+          "D"
+        ],
+        "ejected": [
+          "E",
+          "T2",
+          "T3",
+          "T4"
+        ],
+        "rescued": [],
+        "keys": {
+          "fires_required": 3,
+          "seat_supermajority": 0.667,
+          "seats_for_supermajority": 267,
+          "seats_for_majority": 201
+        }
+      }
+    },
+    {
+      "parties_merged": 2,
+      "combined_vote": 15,
+      "seats": 67,
+      "holds_a_fire": true,
+      "wasted_vote": 10.0,
+      "allocation": {
+        "chamber": 400,
+        "seated": 342,
+        "cold": 58,
+        "wasted_vote": 10.0,
+        "fires": [
+          {
+            "name": "A",
+            "parties": [
+              "A"
+            ],
+            "votes": 40,
+            "seats": 120,
+            "cold": 58,
+            "claimed": 178,
+            "share": 30.0,
+            "at_cap": true
+          },
+          {
+            "name": "B",
+            "parties": [
+              "B"
+            ],
+            "votes": 20,
+            "seats": 89,
+            "cold": 0,
+            "claimed": 89,
+            "share": 22.25,
+            "at_cap": false
+          },
+          {
+            "name": "T",
+            "parties": [
+              "T"
+            ],
+            "votes": 15,
+            "seats": 67,
+            "cold": 0,
+            "claimed": 67,
+            "share": 16.75,
+            "at_cap": false
+          },
+          {
+            "name": "C",
+            "parties": [
+              "C"
+            ],
+            "votes": 8,
+            "seats": 35,
+            "cold": 0,
+            "claimed": 35,
+            "share": 8.75,
+            "at_cap": false
+          },
+          {
+            "name": "D",
+            "parties": [
+              "D"
+            ],
+            "votes": 7,
+            "seats": 31,
+            "cold": 0,
+            "claimed": 31,
+            "share": 7.75,
+            "at_cap": false
+          }
+        ],
+        "council": [
+          "A",
+          "B",
+          "T",
+          "C",
+          "D"
+        ],
+        "ejected": [
+          "E",
+          "T3",
+          "T4"
+        ],
+        "rescued": [],
+        "keys": {
+          "fires_required": 3,
+          "seat_supermajority": 0.667,
+          "seats_for_supermajority": 267,
+          "seats_for_majority": 201
+        }
+      }
+    },
+    {
+      "parties_merged": 3,
+      "combined_vote": 20,
+      "seats": 84,
+      "holds_a_fire": true,
+      "wasted_vote": 5.0,
+      "allocation": {
+        "chamber": 400,
+        "seated": 351,
+        "cold": 49,
+        "wasted_vote": 5.0,
+        "fires": [
+          {
+            "name": "A",
+            "parties": [
+              "A"
+            ],
+            "votes": 40,
+            "seats": 120,
+            "cold": 49,
+            "claimed": 169,
+            "share": 30.0,
+            "at_cap": true
+          },
+          {
+            "name": "B",
+            "parties": [
+              "B"
+            ],
+            "votes": 20,
+            "seats": 84,
+            "cold": 0,
+            "claimed": 84,
+            "share": 21.0,
+            "at_cap": false
+          },
+          {
+            "name": "T",
+            "parties": [
+              "T"
+            ],
+            "votes": 20,
+            "seats": 84,
+            "cold": 0,
+            "claimed": 84,
+            "share": 21.0,
+            "at_cap": false
+          },
+          {
+            "name": "C",
+            "parties": [
+              "C"
+            ],
+            "votes": 8,
+            "seats": 34,
+            "cold": 0,
+            "claimed": 34,
+            "share": 8.5,
+            "at_cap": false
+          },
+          {
+            "name": "D",
+            "parties": [
+              "D"
+            ],
+            "votes": 7,
+            "seats": 29,
+            "cold": 0,
+            "claimed": 29,
+            "share": 7.25,
+            "at_cap": false
+          }
+        ],
+        "council": [
+          "A",
+          "B",
+          "T",
+          "C",
+          "D"
+        ],
+        "ejected": [
+          "E",
+          "T4"
+        ],
+        "rescued": [],
+        "keys": {
+          "fires_required": 3,
+          "seat_supermajority": 0.667,
+          "seats_for_supermajority": 267,
+          "seats_for_majority": 201
+        }
+      }
+    },
+    {
+      "parties_merged": 4,
+      "combined_vote": 24,
+      "seats": 97,
+      "holds_a_fire": true,
+      "wasted_vote": 1.0,
+      "allocation": {
+        "chamber": 400,
+        "seated": 358,
+        "cold": 42,
+        "wasted_vote": 1.0,
+        "fires": [
+          {
+            "name": "A",
+            "parties": [
+              "A"
+            ],
+            "votes": 40,
+            "seats": 120,
+            "cold": 42,
+            "claimed": 162,
+            "share": 30.0,
+            "at_cap": true
+          },
+          {
+            "name": "T",
+            "parties": [
+              "T"
+            ],
+            "votes": 24,
+            "seats": 97,
+            "cold": 0,
+            "claimed": 97,
+            "share": 24.25,
+            "at_cap": false
+          },
+          {
+            "name": "B",
+            "parties": [
+              "B"
+            ],
+            "votes": 20,
+            "seats": 81,
+            "cold": 0,
+            "claimed": 81,
+            "share": 20.25,
+            "at_cap": false
+          },
+          {
+            "name": "C",
+            "parties": [
+              "C"
+            ],
+            "votes": 8,
+            "seats": 32,
+            "cold": 0,
+            "claimed": 32,
+            "share": 8.0,
+            "at_cap": false
+          },
+          {
+            "name": "D",
+            "parties": [
+              "D"
+            ],
+            "votes": 7,
+            "seats": 28,
+            "cold": 0,
+            "claimed": 28,
+            "share": 7.0,
+            "at_cap": false
+          }
+        ],
+        "council": [
+          "A",
+          "T",
+          "B",
+          "C",
+          "D"
+        ],
+        "ejected": [
+          "E"
+        ],
+        "rescued": [],
+        "keys": {
+          "fires_required": 3,
+          "seat_supermajority": 0.667,
+          "seats_for_supermajority": 267,
+          "seats_for_majority": 201
+        }
+      }
+    }
+  ],
+  "absorption_ladder": [
+    {
+      "absorbed": [],
+      "seats": 105,
+      "cold": 0
+    },
+    {
+      "absorbed": [
+        "C"
+      ],
+      "seats": 120,
+      "cold": 15,
+      "at_cap": true
+    },
+    {
+      "absorbed": [
+        "C",
+        "T1"
+      ],
+      "seats": 120,
+      "cold": 40,
+      "at_cap": true
+    },
+    {
+      "absorbed": [
+        "C",
+        "T1",
+        "D"
+      ],
+      "seats": 120,
+      "cold": 61,
+      "at_cap": true
+    }
+  ],
+  "rescue_options": [
+    {
+      "option": "none",
+      "wasted_vote": 17.0,
+      "unseated": [],
+      "tail_holds_a_council_seat": false,
+      "allocation": {
+        "chamber": 400,
+        "seated": 327,
+        "cold": 73,
+        "wasted_vote": 17.0,
+        "fires": [
+          {
+            "name": "A",
+            "parties": [
+              "A"
+            ],
+            "votes": 40,
+            "seats": 120,
+            "cold": 73,
+            "claimed": 193,
+            "share": 30.0,
+            "at_cap": true
+          },
+          {
+            "name": "B",
+            "parties": [
+              "B"
+            ],
+            "votes": 20,
+            "seats": 96,
+            "cold": 0,
+            "claimed": 96,
+            "share": 24.0,
+            "at_cap": false
+          },
+          {
+            "name": "C",
+            "parties": [
+              "C"
+            ],
+            "votes": 8,
+            "seats": 39,
+            "cold": 0,
+            "claimed": 39,
+            "share": 9.75,
+            "at_cap": false
+          },
+          {
+            "name": "T1",
+            "parties": [
+              "T1"
+            ],
+            "votes": 8,
+            "seats": 38,
+            "cold": 0,
+            "claimed": 38,
+            "share": 9.5,
+            "at_cap": false
+          },
+          {
+            "name": "D",
+            "parties": [
+              "D"
+            ],
+            "votes": 7,
+            "seats": 34,
+            "cold": 0,
+            "claimed": 34,
+            "share": 8.5,
+            "at_cap": false
+          }
+        ],
+        "council": [
+          "A",
+          "B",
+          "C",
+          "T1",
+          "D"
+        ],
+        "ejected": [
+          "E",
+          "T2",
+          "T3",
+          "T4"
+        ],
+        "rescued": [],
+        "keys": {
+          "fires_required": 3,
+          "seat_supermajority": 0.667,
+          "seats_for_supermajority": 267,
+          "seats_for_majority": 201
+        }
+      }
+    },
+    {
+      "option": "tail takes its own fire",
+      "wasted_vote": 8.0,
+      "unseated": [
+        "D"
+      ],
+      "tail_holds_a_council_seat": true,
+      "allocation": {
+        "chamber": 400,
+        "seated": 346,
+        "cold": 54,
+        "wasted_vote": 8.0,
+        "fires": [
+          {
+            "name": "A",
+            "parties": [
+              "A"
+            ],
+            "votes": 40,
+            "seats": 120,
+            "cold": 54,
+            "claimed": 174,
+            "share": 30.0,
+            "at_cap": true
+          },
+          {
+            "name": "B",
+            "parties": [
+              "B"
+            ],
+            "votes": 20,
+            "seats": 87,
+            "cold": 0,
+            "claimed": 87,
+            "share": 21.75,
+            "at_cap": false
+          },
+          {
+            "name": "T2+T3+T4",
+            "parties": [
+              "T2",
+              "T3",
+              "T4"
+            ],
+            "votes": 16,
+            "seats": 69,
+            "cold": 0,
+            "claimed": 69,
+            "share": 17.25,
+            "at_cap": false
+          },
+          {
+            "name": "C",
+            "parties": [
+              "C"
+            ],
+            "votes": 8,
+            "seats": 35,
+            "cold": 0,
+            "claimed": 35,
+            "share": 8.75,
+            "at_cap": false
+          },
+          {
+            "name": "T1",
+            "parties": [
+              "T1"
+            ],
+            "votes": 8,
+            "seats": 35,
+            "cold": 0,
+            "claimed": 35,
+            "share": 8.75,
+            "at_cap": false
+          }
+        ],
+        "council": [
+          "A",
+          "B",
+          "T2+T3+T4",
+          "C",
+          "T1"
+        ],
+        "ejected": [
+          "D",
+          "E"
+        ],
+        "rescued": [
+          [
+            "T2",
+            "T3",
+            "T4"
+          ]
+        ],
+        "keys": {
+          "fires_required": 3,
+          "seat_supermajority": 0.667,
+          "seats_for_supermajority": 267,
+          "seats_for_majority": 201
+        }
+      }
+    },
+    {
+      "option": "tail joins A",
+      "refused": "'A' is at the cap and has no room to host"
+    },
+    {
+      "option": "tail joins B",
+      "wasted_vote": 1.0,
+      "unseated": [],
+      "tail_holds_a_council_seat": false,
+      "host_seats_before": 96,
+      "host_seats_after": 120,
+      "allocation": {
+        "chamber": 400,
+        "seated": 332,
+        "cold": 68,
+        "wasted_vote": 1.0,
+        "fires": [
+          {
+            "name": "A",
+            "parties": [
+              "A"
+            ],
+            "votes": 40,
+            "seats": 120,
+            "cold": 42,
+            "claimed": 162,
+            "share": 30.0,
+            "at_cap": true
+          },
+          {
+            "name": "B+T2+T3+T4",
+            "parties": [
+              "B",
+              "T2",
+              "T3",
+              "T4"
+            ],
+            "votes": 36,
+            "seats": 120,
+            "cold": 26,
+            "claimed": 146,
+            "share": 30.0,
+            "at_cap": true
+          },
+          {
+            "name": "C",
+            "parties": [
+              "C"
+            ],
+            "votes": 8,
+            "seats": 32,
+            "cold": 0,
+            "claimed": 32,
+            "share": 8.0,
+            "at_cap": false
+          },
+          {
+            "name": "T1",
+            "parties": [
+              "T1"
+            ],
+            "votes": 8,
+            "seats": 32,
+            "cold": 0,
+            "claimed": 32,
+            "share": 8.0,
+            "at_cap": false
+          },
+          {
+            "name": "D",
+            "parties": [
+              "D"
+            ],
+            "votes": 7,
+            "seats": 28,
+            "cold": 0,
+            "claimed": 28,
+            "share": 7.0,
+            "at_cap": false
+          }
+        ],
+        "council": [
+          "A",
+          "B+T2+T3+T4",
+          "C",
+          "T1",
+          "D"
+        ],
+        "ejected": [
+          "E"
+        ],
+        "rescued": [
+          [
+            "B",
+            "T2",
+            "T3",
+            "T4"
+          ]
+        ],
+        "keys": {
+          "fires_required": 3,
+          "seat_supermajority": 0.667,
+          "seats_for_supermajority": 267,
+          "seats_for_majority": 201
+        }
+      }
+    },
+    {
+      "option": "tail joins C",
+      "wasted_vote": 1.0,
+      "unseated": [],
+      "tail_holds_a_council_seat": false,
+      "host_seats_before": 39,
+      "host_seats_after": 97,
+      "allocation": {
+        "chamber": 400,
+        "seated": 358,
+        "cold": 42,
+        "wasted_vote": 1.0,
+        "fires": [
+          {
+            "name": "A",
+            "parties": [
+              "A"
+            ],
+            "votes": 40,
+            "seats": 120,
+            "cold": 42,
+            "claimed": 162,
+            "share": 30.0,
+            "at_cap": true
+          },
+          {
+            "name": "C+T2+T3+T4",
+            "parties": [
+              "C",
+              "T2",
+              "T3",
+              "T4"
+            ],
+            "votes": 24,
+            "seats": 97,
+            "cold": 0,
+            "claimed": 97,
+            "share": 24.25,
+            "at_cap": false
+          },
+          {
+            "name": "B",
+            "parties": [
+              "B"
+            ],
+            "votes": 20,
+            "seats": 81,
+            "cold": 0,
+            "claimed": 81,
+            "share": 20.25,
+            "at_cap": false
+          },
+          {
+            "name": "T1",
+            "parties": [
+              "T1"
+            ],
+            "votes": 8,
+            "seats": 32,
+            "cold": 0,
+            "claimed": 32,
+            "share": 8.0,
+            "at_cap": false
+          },
+          {
+            "name": "D",
+            "parties": [
+              "D"
+            ],
+            "votes": 7,
+            "seats": 28,
+            "cold": 0,
+            "claimed": 28,
+            "share": 7.0,
+            "at_cap": false
+          }
+        ],
+        "council": [
+          "A",
+          "C+T2+T3+T4",
+          "B",
+          "T1",
+          "D"
+        ],
+        "ejected": [
+          "E"
+        ],
+        "rescued": [
+          [
+            "C",
+            "T2",
+            "T3",
+            "T4"
+          ]
+        ],
+        "keys": {
+          "fires_required": 3,
+          "seat_supermajority": 0.667,
+          "seats_for_supermajority": 267,
+          "seats_for_majority": 201
+        }
+      }
+    },
+    {
+      "option": "tail joins T1",
+      "wasted_vote": 1.0,
+      "unseated": [],
+      "tail_holds_a_council_seat": false,
+      "host_seats_before": 38,
+      "host_seats_after": 97,
+      "allocation": {
+        "chamber": 400,
+        "seated": 358,
+        "cold": 42,
+        "wasted_vote": 1.0,
+        "fires": [
+          {
+            "name": "A",
+            "parties": [
+              "A"
+            ],
+            "votes": 40,
+            "seats": 120,
+            "cold": 42,
+            "claimed": 162,
+            "share": 30.0,
+            "at_cap": true
+          },
+          {
+            "name": "T1+T2+T3+T4",
+            "parties": [
+              "T1",
+              "T2",
+              "T3",
+              "T4"
+            ],
+            "votes": 24,
+            "seats": 97,
+            "cold": 0,
+            "claimed": 97,
+            "share": 24.25,
+            "at_cap": false
+          },
+          {
+            "name": "B",
+            "parties": [
+              "B"
+            ],
+            "votes": 20,
+            "seats": 81,
+            "cold": 0,
+            "claimed": 81,
+            "share": 20.25,
+            "at_cap": false
+          },
+          {
+            "name": "C",
+            "parties": [
+              "C"
+            ],
+            "votes": 8,
+            "seats": 32,
+            "cold": 0,
+            "claimed": 32,
+            "share": 8.0,
+            "at_cap": false
+          },
+          {
+            "name": "D",
+            "parties": [
+              "D"
+            ],
+            "votes": 7,
+            "seats": 28,
+            "cold": 0,
+            "claimed": 28,
+            "share": 7.0,
+            "at_cap": false
+          }
+        ],
+        "council": [
+          "A",
+          "T1+T2+T3+T4",
+          "B",
+          "C",
+          "D"
+        ],
+        "ejected": [
+          "E"
+        ],
+        "rescued": [
+          [
+            "T1",
+            "T2",
+            "T3",
+            "T4"
+          ]
+        ],
+        "keys": {
+          "fires_required": 3,
+          "seat_supermajority": 0.667,
+          "seats_for_supermajority": 267,
+          "seats_for_majority": 201
+        }
+      }
+    },
+    {
+      "option": "tail joins D",
+      "wasted_vote": 1.0,
+      "unseated": [],
+      "tail_holds_a_council_seat": false,
+      "host_seats_before": 34,
+      "host_seats_after": 93,
+      "allocation": {
+        "chamber": 400,
+        "seated": 358,
+        "cold": 42,
+        "wasted_vote": 1.0,
+        "fires": [
+          {
+            "name": "A",
+            "parties": [
+              "A"
+            ],
+            "votes": 40,
+            "seats": 120,
+            "cold": 42,
+            "claimed": 162,
+            "share": 30.0,
+            "at_cap": true
+          },
+          {
+            "name": "D+T2+T3+T4",
+            "parties": [
+              "D",
+              "T2",
+              "T3",
+              "T4"
+            ],
+            "votes": 23,
+            "seats": 93,
+            "cold": 0,
+            "claimed": 93,
+            "share": 23.25,
+            "at_cap": false
+          },
+          {
+            "name": "B",
+            "parties": [
+              "B"
+            ],
+            "votes": 20,
+            "seats": 81,
+            "cold": 0,
+            "claimed": 81,
+            "share": 20.25,
+            "at_cap": false
+          },
+          {
+            "name": "C",
+            "parties": [
+              "C"
+            ],
+            "votes": 8,
+            "seats": 32,
+            "cold": 0,
+            "claimed": 32,
+            "share": 8.0,
+            "at_cap": false
+          },
+          {
+            "name": "T1",
+            "parties": [
+              "T1"
+            ],
+            "votes": 8,
+            "seats": 32,
+            "cold": 0,
+            "claimed": 32,
+            "share": 8.0,
+            "at_cap": false
+          }
+        ],
+        "council": [
+          "A",
+          "D+T2+T3+T4",
+          "B",
+          "C",
+          "T1"
+        ],
+        "ejected": [
+          "E"
+        ],
+        "rescued": [
+          [
+            "D",
+            "T2",
+            "T3",
+            "T4"
+          ]
+        ],
+        "keys": {
+          "fires_required": 3,
+          "seat_supermajority": 0.667,
+          "seats_for_supermajority": 267,
+          "seats_for_majority": 201
+        }
+      }
+    }
+  ],
+  "rescue_floor_sweep": [
+    {
+      "floor": 0.0,
+      "eligible": [
+        "E",
+        "T2",
+        "T3",
+        "T4"
+      ],
+      "wasted_vote": 7.0,
+      "claims_a_fire": true,
+      "unseated": [
+        "D"
+      ]
+    },
+    {
+      "floor": 0.01,
+      "eligible": [
+        "E",
+        "T2",
+        "T3",
+        "T4"
+      ],
+      "wasted_vote": 7.0,
+      "claims_a_fire": true,
+      "unseated": [
+        "D"
+      ]
+    },
+    {
+      "floor": 0.02,
+      "eligible": [
+        "T2",
+        "T3",
+        "T4"
+      ],
+      "wasted_vote": 8.0,
+      "claims_a_fire": true,
+      "unseated": [
+        "D"
+      ]
+    },
+    {
+      "floor": 0.05,
+      "eligible": [
+        "T2",
+        "T3"
+      ],
+      "wasted_vote": 12.0,
+      "claims_a_fire": true,
+      "unseated": [
+        "D"
+      ]
+    },
+    {
+      "floor": 0.08,
+      "eligible": [],
+      "wasted_vote": 17.0,
+      "claims_a_fire": false,
+      "unseated": []
+    }
+  ],
+  "divisor_check": {
+    "sainte_lague": {
+      "whole": 160,
+      "divided": 160,
+      "delta": 0
+    },
+    "dhondt": {
+      "whole": 160,
+      "divided": 160,
+      "delta": 0
+    }
+  },
+  "by_electorate": {
+    "lopsided": {
+      "chamber": 400,
+      "seated": 327,
+      "cold": 73,
+      "wasted_vote": 17.0,
+      "fires": [
+        {
+          "name": "A",
+          "parties": [
+            "A"
+          ],
+          "votes": 40,
+          "seats": 120,
+          "cold": 73,
+          "claimed": 193,
+          "share": 30.0,
+          "at_cap": true
+        },
+        {
+          "name": "B",
+          "parties": [
+            "B"
+          ],
+          "votes": 20,
+          "seats": 96,
+          "cold": 0,
+          "claimed": 96,
+          "share": 24.0,
+          "at_cap": false
+        },
+        {
+          "name": "C",
+          "parties": [
+            "C"
+          ],
+          "votes": 8,
+          "seats": 39,
+          "cold": 0,
+          "claimed": 39,
+          "share": 9.75,
+          "at_cap": false
+        },
+        {
+          "name": "T1",
+          "parties": [
+            "T1"
+          ],
+          "votes": 8,
+          "seats": 38,
+          "cold": 0,
+          "claimed": 38,
+          "share": 9.5,
+          "at_cap": false
+        },
+        {
+          "name": "D",
+          "parties": [
+            "D"
+          ],
+          "votes": 7,
+          "seats": 34,
+          "cold": 0,
+          "claimed": 34,
+          "share": 8.5,
+          "at_cap": false
+        }
+      ],
+      "council": [
+        "A",
+        "B",
+        "C",
+        "T1",
+        "D"
+      ],
+      "ejected": [
+        "E",
+        "T2",
+        "T3",
+        "T4"
+      ],
+      "rescued": [],
+      "keys": {
+        "fires_required": 3,
+        "seat_supermajority": 0.667,
+        "seats_for_supermajority": 267,
+        "seats_for_majority": 201
+      }
+    },
+    "duopoly": {
+      "chamber": 400,
+      "seated": 291,
+      "cold": 109,
+      "wasted_vote": 5.0,
+      "fires": [
+        {
+          "name": "A",
+          "parties": [
+            "A"
+          ],
+          "votes": 45,
+          "seats": 120,
+          "cold": 69,
+          "claimed": 189,
+          "share": 30.0,
+          "at_cap": true
+        },
+        {
+          "name": "B",
+          "parties": [
+            "B"
+          ],
+          "votes": 38,
+          "seats": 120,
+          "cold": 40,
+          "claimed": 160,
+          "share": 30.0,
+          "at_cap": true
+        },
+        {
+          "name": "C",
+          "parties": [
+            "C"
+          ],
+          "votes": 5,
+          "seats": 21,
+          "cold": 0,
+          "claimed": 21,
+          "share": 5.25,
+          "at_cap": false
+        },
+        {
+          "name": "D",
+          "parties": [
+            "D"
+          ],
+          "votes": 4,
+          "seats": 17,
+          "cold": 0,
+          "claimed": 17,
+          "share": 4.25,
+          "at_cap": false
+        },
+        {
+          "name": "E",
+          "parties": [
+            "E"
+          ],
+          "votes": 3,
+          "seats": 13,
+          "cold": 0,
+          "claimed": 13,
+          "share": 3.25,
+          "at_cap": false
+        }
+      ],
+      "council": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "ejected": [
+        "F",
+        "G",
+        "H"
+      ],
+      "rescued": [],
+      "keys": {
+        "fires_required": 3,
+        "seat_supermajority": 0.667,
+        "seats_for_supermajority": 267,
+        "seats_for_majority": 201
+      }
+    },
+    "healthy": {
+      "chamber": 400,
+      "seated": 400,
+      "cold": 0,
+      "wasted_vote": 4.0,
+      "fires": [
+        {
+          "name": "A",
+          "parties": [
+            "A"
+          ],
+          "votes": 24,
+          "seats": 100,
+          "cold": 0,
+          "claimed": 100,
+          "share": 25.0,
+          "at_cap": false
+        },
+        {
+          "name": "B",
+          "parties": [
+            "B"
+          ],
+          "votes": 22,
+          "seats": 92,
+          "cold": 0,
+          "claimed": 92,
+          "share": 23.0,
+          "at_cap": false
+        },
+        {
+          "name": "C",
+          "parties": [
+            "C"
+          ],
+          "votes": 20,
+          "seats": 83,
+          "cold": 0,
+          "claimed": 83,
+          "share": 20.75,
+          "at_cap": false
+        },
+        {
+          "name": "D",
+          "parties": [
+            "D"
+          ],
+          "votes": 18,
+          "seats": 75,
+          "cold": 0,
+          "claimed": 75,
+          "share": 18.75,
+          "at_cap": false
+        },
+        {
+          "name": "E",
+          "parties": [
+            "E"
+          ],
+          "votes": 12,
+          "seats": 50,
+          "cold": 0,
+          "claimed": 50,
+          "share": 12.5,
+          "at_cap": false
+        }
+      ],
+      "council": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "ejected": [
+        "F",
+        "G"
+      ],
+      "rescued": [],
+      "keys": {
+        "fires_required": 3,
+        "seat_supermajority": 0.667,
+        "seats_for_supermajority": 267,
+        "seats_for_majority": 201
+      }
+    },
+    "fragmented": {
+      "chamber": 400,
+      "seated": 396,
+      "cold": 4,
+      "wasted_vote": 29.0,
+      "fires": [
+        {
+          "name": "A",
+          "parties": [
+            "A"
+          ],
+          "votes": 22,
+          "seats": 120,
+          "cold": 4,
+          "claimed": 124,
+          "share": 30.0,
+          "at_cap": true
+        },
+        {
+          "name": "B",
+          "parties": [
+            "B"
+          ],
+          "votes": 18,
+          "seats": 101,
+          "cold": 0,
+          "claimed": 101,
+          "share": 25.25,
+          "at_cap": false
+        },
+        {
+          "name": "C",
+          "parties": [
+            "C"
+          ],
+          "votes": 12,
+          "seats": 68,
+          "cold": 0,
+          "claimed": 68,
+          "share": 17.0,
+          "at_cap": false
+        },
+        {
+          "name": "D",
+          "parties": [
+            "D"
+          ],
+          "votes": 10,
+          "seats": 56,
+          "cold": 0,
+          "claimed": 56,
+          "share": 14.0,
+          "at_cap": false
+        },
+        {
+          "name": "E",
+          "parties": [
+            "E"
+          ],
+          "votes": 9,
+          "seats": 51,
+          "cold": 0,
+          "claimed": 51,
+          "share": 12.75,
+          "at_cap": false
+        }
+      ],
+      "council": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "ejected": [
+        "F",
+        "G",
+        "H",
+        "I",
+        "J"
+      ],
+      "rescued": [],
+      "keys": {
+        "fires_required": 3,
+        "seat_supermajority": 0.667,
+        "seats_for_supermajority": 267,
+        "seats_for_majority": 201
+      }
+    }
+  }
+}

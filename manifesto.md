@@ -14,6 +14,29 @@ Five political parties hold formal recognition at any given time, determined by 
 
 ---
 
+## What an Election Produces
+
+An election in this system does not produce a winner. It produces an **allocation** — one settled description of the state of government until the next election. Everything that follows in this document is an argument about how one part of the allocation is determined, so it is worth stating up front what the whole object contains.
+
+An allocation is:
+
+- **Five fires.** The recognized parties. Each is normally one party; it is more than one only where parties combined to hold it between them.
+- **The seats each fire holds**, out of 400.
+- **The cold seats.** Those a fire won but may not occupy, because it exceeded the cap. They are not given to anyone. They stay empty and countable, and they are the visible price of refusing to divide.
+- **The council.** Five voices, one per fire, whatever its size.
+- **The ejected.** Parties that fell below the cliff, and the share of the vote that went with them — stated rather than hidden, because it is the system's real cost.
+- **The two thresholds.** How many seats a majority takes, and how many a structural act takes.
+
+Three properties of this object matter more than any individual rule.
+
+It is **complete**: there is no separate negotiation that determines who governs. The allocation is the outcome, and coalitions form inside it rather than deciding it.
+
+It is **honest about waste**. Most electoral systems report only who won. An allocation reports the cold seats and the ejected vote alongside them — the seats a party could not take and the voters who elected nobody. A system that hides its own cost cannot be argued with.
+
+And it is **computable**. Every rule reads vote counts and nothing else, so an allocation can be derived from a vote tally by anyone, with no judgement calls and no authority in the middle. The reference implementation in this repository emits it as JSON: `python distributor.py votes.json`. Every figure quoted in this document comes from that output, and `scenarios.json` contains the worked cases in full. If a claim here is wrong, it can be shown to be wrong.
+
+---
+
 ## How Parties Enter and Exit
 
 After each federal election, national vote shares are tallied. The top five parties are recognized. If a new party outpolls a currently recognized party, the swap is immediate. The displaced party loses all institutional standing.
